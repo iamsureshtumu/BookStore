@@ -96,7 +96,7 @@ def register(request):
             user_data.save()
             register=True
             send_mail("Registration Successful","Thank You For Registering","noreply2user.infotech@gmail.com", \
-                [user.email],fail_silently=False) 
+                [user.email],fail_silently=True) 
      #here we give user.email.............so it will also send to the unknow person who is going to signup here
     else:
         user_form=forms.User_Form()
