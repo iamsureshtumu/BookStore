@@ -1,0 +1,12 @@
+{% extends 'homepage.html' %} {% block content %} {% for ms in masters %}
+<div class="container">
+    <div class="ms">
+        <!-- <h2><a href="">{{ post.title }}</a></h2> -->
+        <h2><a href="{% url 'app:post_detail_masters' pk=ms.pk %}">{{ ms.book_title }}</a></h2>
+        <div class="date">
+            <p>published: {{ ms.published_date }}</p>
+        </div>
+        <p>Author: {{ ms.auth_name|linebreaksbr }}</p>
+    </div>
+</div>
+{% endfor %} {% endblock %}

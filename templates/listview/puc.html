@@ -1,0 +1,14 @@
+{% extends 'homepage.html' %} {% block content %} {% for pu in puc %}
+<div class="container">
+    <div class="pu">
+        <!-- <h2><a href="">{{ post.title }}</a></h2> -->
+        <h2><a href="{% url 'app:post_detail_puc' pk=pu.pk %}">{{ pu.book_title }}</a></h2>
+        <div class="date">
+            <p>published: {{ pu.published_date }}</p>
+        </div>
+        <p>Author: {{ pu.auth_name|linebreaksbr }}</p>
+    </div>
+</div>
+
+{% endfor %} {% endblock %}
+<div class="row text-center">

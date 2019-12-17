@@ -1,0 +1,12 @@
+ {% extends 'homepage.html' %} {% block content %} {% for en in engg %}
+<div class="container">
+    <div class="en">
+        <!-- <h2><a href="">{{ post.title }}</a></h2> -->
+        <h2><a href="{% url 'app:post_detail_engg' pk=en.pk %}">{{ en.book_title }}</a></h2>
+        <div class="date">
+            <p>published: {{ en.published_date }}</p>
+        </div>
+        <p>Author: {{ en.auth_name|linebreaksbr }}</p>
+    </div>
+</div>
+{% endfor %} {% endblock %}

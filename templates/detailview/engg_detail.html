@@ -1,0 +1,14 @@
+{% extends 'homepage.html' %} {% block content %}
+<a href="{% url 'app:post_list_engg' %}" class="btn btn-outline-success stretched-link">goback</a>
+<br><br>
+<div class="en">
+    {% if en.published_date %}
+    <div class="date">
+        {{ en.published_date }}
+    </div>
+    {% endif %}
+    <h2>{{ en.book_title }}</h2>
+    <p>{{ en.auth_title|linebreaksbr }}</p>
+    <p>{{ en.text|linebreaksbr }}</p>
+</div>
+{% endblock %}

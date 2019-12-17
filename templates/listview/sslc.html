@@ -1,0 +1,22 @@
+{% extends 'homepage.html' %} {% block content %} {% for post in sslc %}
+
+<div class="row text-center">
+
+    <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card">
+
+            <div class="card-body">
+                <div class="post">
+                    <!-- <h2><a href="">{{ post.title }}</a></h2> -->
+                    <h2><a href="{% url 'app:post_detail_sslc' pk=post.pk %}">{{ post.book_title }}</a></h2>
+                    <div class="date">
+                        <p>published: {{ post.published_date }}</p>
+                    </div>
+                    <p>Author: {{ post.auth_name|linebreaksbr }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endfor %} {% endblock %}

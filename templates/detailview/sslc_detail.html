@@ -1,0 +1,17 @@
+{% extends 'homepage.html' %} {% block content %}
+
+<a href="{% url 'app:post_list_sslc' %}" class="btn btn-outline-success stretched-link">goback</a>
+<br><br>
+<div class="post">
+    <div class="container">
+        {% if post.published_date %}
+        <div class="date">
+            Published on : {{ post.published_date }}
+        </div>
+        {% endif %}
+        <h2>{{ post.book_title }}</h2>
+        <p>{{ post.auth_title|linebreaksbr }}</p>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+</div>
+{% endblock %}
