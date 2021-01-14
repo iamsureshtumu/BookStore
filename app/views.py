@@ -19,7 +19,7 @@ from django.core.mail import send_mail
 @login_required    
 def homepage(request):
     # ctg1=Sslc.objects.all()
-    user_name=request.session.get('username',"No User")
+    user_name=request.session.get('username',"No User") 
     c1=Sslc.objects.all().count()
     c2=Puc.objects.all().count()
     c3=Engineering.objects.all().count()
